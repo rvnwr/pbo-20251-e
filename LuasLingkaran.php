@@ -3,11 +3,23 @@
 class LuasLingkaran {
     public const phi = 3.14;
     public int $jari;
+
+    public function __construct($isijari = 1){
+        $this->jari = $isijari; 
+    }
+    public function tampil($nama = 'ban') {
+        $rumus = LuasLingkaran::phi * $this->jari * $this->jari;
+        echo "Lingkaran {$nama} Hasilnya adalah:{$rumus}";
+    }
+    public static function testing(){
+        echo "ini dari static";
+    }
+    public function __destruct(){
+        echo "Udah ah cape";
+    }
 }
 
-$Lingkaran = new LuasLingkaran();
-$Lingkaran -> jari = 16;
+$Lingkaran = new LuasLingkaran(16);
+$Lingkaran -> tampil('roda');
 
-$rumus = LuasLingkaran::phi * $Lingkaran->jari * $Lingkaran->jari;
-
-echo "Hasilnya adalah: ". $rumus;
+LuasLingkaran::testing();
