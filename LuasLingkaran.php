@@ -3,6 +3,7 @@
 namespace App\Math;
 
 class LuasLingkaran {
+
     public const phi = 3.14;
     private int $jari;
     
